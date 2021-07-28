@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "item": "trexsmod:raw_indusium"
+    },
+    "result": "trexsmod:indusium_ingot",
+    "experience": 0.1,
+    "cookingtime": 200
+}

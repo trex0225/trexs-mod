@@ -1,0 +1,31 @@
+{
+    "item.trexsmod.wooden_spear": "Wooden Spear",
+    "item.trexsmod.stone_spear": "Stone Spear",
+    "item.trexsmod.iron_spear": "Iron Spear",
+    "item.trexsmod.golden_spear": "Golden Spear",
+    "item.trexsmod.diamond_spear": "Diamond Spear",
+    "item.trexsmod.netherite_spear": "Netherite Spear",
+
+    "item.trexsmod.wooden_partisan": "Wooden Partisan",
+    "item.trexsmod.stone_partisan": "Stone Partisan",
+    "item.trexsmod.iron_partisan": "Iron Partisan",
+    "item.trexsmod.golden_partisan": "Golden Partisan",
+    "item.trexsmod.diamond_partisan": "Diamond Partisan",
+    "item.trexsmod.netherite_partisan": "Netherite Partisan",
+
+    "item.trexsmod.magic_missile": "Magic Missile",
+    "item.trexsmod.magic_bolt": "Magic Bolt",
+
+    "item.trexsmod.raw_indusium": "Raw Indusium",
+
+    "item.trexsmod.indusium_ingot": "Indusium Ingot",
+
+    "enchantment.trexsmod.hunt": "Hunt",
+    "enchantment.trexsmod.wind_rider": "Wind Rider",
+
+    "effect.trexsmod.bleeding": "Bleeding",
+
+    "block.trexsmod.indusium_ore": "Indusium Ore",
+
+    "itemGroup.trexsmod.other": "Trex's Mod"
+}

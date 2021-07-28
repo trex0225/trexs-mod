@@ -1,0 +1,19 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "trex0225.trexs.mod.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "ServerPlayerEntityMixin",
+    "EnchantmentMixin",
+    "PlayerEntityMixin"
+  ],
+  "client": [
+    "InGameHudMixin",
+    "ItemRendererMixin",
+    "ClientPlayerEntityMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

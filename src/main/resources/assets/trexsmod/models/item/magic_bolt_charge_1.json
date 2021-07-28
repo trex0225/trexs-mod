@@ -1,0 +1,6 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "trexsmod:item/magic_bolt_charge_1"
+    }
+}

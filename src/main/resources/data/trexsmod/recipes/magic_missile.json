@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " # ",
+        " / ",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "trexsmod:indusium_ingot"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        }
+    },
+    "result": {
+        "item": "trexsmod:magic_missile",
+        "count": 1
+    }
+}

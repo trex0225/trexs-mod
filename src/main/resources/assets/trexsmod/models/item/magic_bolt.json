@@ -1,0 +1,22 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "trexsmod:item/magic_bolt"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.25
+            },
+            "model": "trexsmod:item/magic_bolt_charge_0"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.5
+            },
+            "model": "trexsmod:item/magic_bolt_charge_1"
+        }
+    ]
+}
