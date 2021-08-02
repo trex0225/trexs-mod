@@ -15,10 +15,13 @@
 
     "item.trexsmod.magic_missile": "Magic Missile",
     "item.trexsmod.magic_bolt": "Magic Bolt",
+    "item.trexsmod.arcane_bullet": "Arcane Bullet",
 
     "item.trexsmod.raw_indusium": "Raw Indusium",
+    "item.trexsmod.raw_mithril": "Raw Mithril",
 
     "item.trexsmod.indusium_ingot": "Indusium Ingot",
+    "item.trexsmod.mithril_ingot": "Mithril Ingot",
 
     "enchantment.trexsmod.hunt": "Hunt",
     "enchantment.trexsmod.wind_rider": "Wind Rider",
@@ -26,6 +29,7 @@
     "effect.trexsmod.bleeding": "Bleeding",
 
     "block.trexsmod.indusium_ore": "Indusium Ore",
+    "block.trexsmod.mithril_ore": "Mithril Ore",
 
     "itemGroup.trexsmod.other": "Trex's Mod"
 }

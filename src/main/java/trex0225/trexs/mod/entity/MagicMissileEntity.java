@@ -29,6 +29,8 @@ import net.minecraft.util.hit.EntityHitResult;
 public class MagicMissileEntity extends ThrownEntity implements Vanishable {
     private int add = 0;
     private float damage = 0;
+    private float speed = 0;
+    private int lifeTime;
 
     public MagicMissileEntity(EntityType<? extends MagicMissileEntity> entityType, World world) {
         super(entityType, world);
@@ -97,12 +99,12 @@ public class MagicMissileEntity extends ThrownEntity implements Vanishable {
         boolean bl = false;
         if (hitResult.getType() != HitResult.Type.MISS && !bl) {
             this.onCollision(hitResult);
-         }
+        }
         this.checkBlockCollision();
         Vec3d vec3d = this.getVelocity();
-        double d = this.getX() + vec3d.x;
-        double e = this.getY() + vec3d.y;
-        double f = this.getZ() + vec3d.z;
+        double d = this.getX() + vec3d.x*speed;
+        double e = this.getY() + vec3d.y*speed;
+        double f = this.getZ() + vec3d.z*speed;
         this.updateRotation();
         float j;
         if (this.isTouchingWater()) {
@@ -118,6 +120,21 @@ public class MagicMissileEntity extends ThrownEntity implements Vanishable {
         this.updatePosition(d, e, f);
     }
 
+    private void move() {
+        HitResult hitResult = ProjectileUtil.getCollision(this, this::canHit);
+        boolean bl = false;
+        if (hitResult.getType() != HitResult.Type.MISS && !bl) {
+            this.onCollision(hitResult);
+        }
+
+        Vec3d vec3d = this.getVelocity();
+        double d = this.getX() + vec3d.x;
+        double e = this.getY() + vec3d.y;
+        double f = this.getZ() + vec3d.z;
+        this.updateRotation();
+        this.updatePosition(d, e, f);
+    }
+
     @Override
     public boolean hasNoGravity() {
         return true;
@@ -127,4 +144,7 @@ public class MagicMissileEntity extends ThrownEntity implements Vanishable {
         this.damage = damage;
     }
 
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
 }

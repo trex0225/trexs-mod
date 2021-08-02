@@ -10,9 +10,14 @@ import net.minecraft.world.World;
 import trex0225.trexs.mod.entity.MagicMissileEntity;
 
 public class MagicMissileItem extends MagicItem {
+    private float speed;
+    private float damage;
+
     public MagicMissileItem(ToolMaterial material, int durability, float attackDamage, float attackSpeed,
-            float spellUseTime, int add, int manaUse, Item.Settings settings) {
+            float spellUseTime, int add, int manaUse, float speedMod, float damage, Item.Settings settings) {
         super(material, durability, attackDamage, attackSpeed, spellUseTime, add, manaUse, settings);
+        this.speed = speedMod;
+        this.damage = damage;
     }
 
     @Override
@@ -21,7 +26,8 @@ public class MagicMissileItem extends MagicItem {
         MagicMissileEntity magic_Missile_Entity = new MagicMissileEntity(user, world, this.getAdd());
         magic_Missile_Entity.setProperties(playerEntity, playerEntity.getPitch(), playerEntity.getYaw(), 0.0F, 0.5F,
                 1.0F);
-        magic_Missile_Entity.setDamage(5.0F);
+        magic_Missile_Entity.setDamage(damage);
+        magic_Missile_Entity.setSpeed(speed);
         magic_Missile_Entity.setPos(playerEntity.getX(), playerEntity.getY() + 1.6D, playerEntity.getZ());
         world.spawnEntity(magic_Missile_Entity);
     }

@@ -133,7 +133,9 @@ public class MagicItem extends SwordItem {
                     PlayerEntity player = (PlayerEntity) user;
                     ManaManager manaManager = ((ManaManagerAccess) player).getManaManager(player);
                     if(manaManager.getManaLevel()>=manaUse) {
-                        manaManager.sutract(manaUse);
+                        if (!playerEntity.getAbilities().creativeMode) {
+                            manaManager.sutract(manaUse);
+                        }
                         castSpell(user, stack, remainingUseTicks, world);
                     }
                 }

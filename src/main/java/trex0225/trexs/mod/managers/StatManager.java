@@ -28,13 +28,13 @@ public class StatManager {
     }
 
     public void setMelee(int melee) {
-        this.meleeDamageBonus+=melee;
+        this.meleeDamageBonus=melee;
     }
     public void setRanged(int ranged) {
-        this.rangedDamageBonus+=ranged;
+        this.rangedDamageBonus=ranged;
     }
     public void setMagic(int magic) {
-        this.magicDamageBonus+=magic;
+        this.magicDamageBonus=magic;
     }
 
     public void readNbt(NbtCompound tag) {

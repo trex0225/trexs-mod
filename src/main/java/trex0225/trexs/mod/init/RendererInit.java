@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.util.Identifier;
 import trex0225.trexs.mod.entity.model.SpearEntityModel;
 import trex0225.trexs.mod.entity.renderer.MagicMissileEntityRenderer;
-import trex0225.trexs.mod.entity.renderer.MagicBoltEntityRenderer;
+//import trex0225.trexs.mod.entity.renderer.MagicBoltEntityRenderer;
 import trex0225.trexs.mod.entity.renderer.SpearEntityRenderer;
 import trex0225.trexs.mod.network.EntitySpawnPacket;
 
@@ -25,7 +25,7 @@ public class RendererInit {
         EntityRendererRegistry.INSTANCE.register(EntityInit.NETHERITE_SPEAR, SpearEntityRenderer::new);
 
         EntityRendererRegistry.INSTANCE.register(EntityInit.MAGIC_MISSILE_ENTITY, MagicMissileEntityRenderer::new);
-        EntityRendererRegistry.INSTANCE.register(EntityInit.MAGIC_BOLT_ENTITY, MagicBoltEntityRenderer::new);
+        //EntityRendererRegistry.INSTANCE.register(EntityInit.MAGIC_BOLT_ENTITY, MagicBoltEntityRenderer::new);
 
         EntityModelLayerRegistry.registerModelLayer(SPEAR_LAYER, SpearEntityModel::getTexturedModelData);
     }

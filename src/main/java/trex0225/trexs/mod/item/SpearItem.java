@@ -18,6 +18,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.item.Item;
@@ -36,6 +37,9 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import trex0225.trexs.mod.entity.SpearEntity;
 import trex0225.trexs.mod.init.EnchantmentInit;
+import trex0225.trexs.mod.managers.StatManager;
+import trex0225.trexs.mod.util.StatHelper;
+import trex0225.trexs.mod.access.StatManagerAccess;
 
 public class SpearItem extends Item implements Vanishable {
 
@@ -108,8 +112,16 @@ public class SpearItem extends Item implements Vanishable {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         float h = target.getHealth();
 
-        target.setHealth(h - ((this.getAttackDamage()* (1+(0.5F*EnchantmentHelper.getLevel(EnchantmentInit.HUNT, stack))) ))
-            -this.getAttackDamage());
+        if(target instanceof AnimalEntity) {
+            target.setHealth(h - ((this.getAttackDamage()* (1+(0.5F*EnchantmentHelper.getLevel(EnchantmentInit.HUNT, stack))) ))
+                -this.getAttackDamage());
+        }
+
+        PlayerEntity player = (PlayerEntity) attacker;
+        StatManager statManager = ((StatManagerAccess) player).getStatManager(player);
+        int damageBonus = statManager.getMelee();
+
+        StatHelper.dealBonusMelee(attacker, statManager, target);
 
         stack.damage(1, attacker, entity -> entity.sendEquipmentBreakStatus(EquipmentSlot.MAINHAND));
         return true;

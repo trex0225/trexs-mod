@@ -16,6 +16,7 @@ import trex0225.trexs.mod.init.ItemInit;
 import trex0225.trexs.mod.init.ModelProviderInit;
 import trex0225.trexs.mod.init.RendererInit;
 import trex0225.trexs.mod.network.ManaUpdatePacket;
+import trex0225.trexs.mod.network.StatUpdatePacket;
 
 public class TrexsMod implements ModInitializer {
 	public static final String MOD_NAME = "Trex's Mod";
@@ -32,6 +33,7 @@ public class TrexsMod implements ModInitializer {
 		BlockInit.init();
 		ConfiguredFeatureInit.init();
 		ManaUpdatePacket.init();
+		//StatUpdatePacket.init();
 	}
 
 	public static final ItemGroup ITEM_GROUP = FabricItemGroupBuilder.create(new Identifier("trexsmod", "other"))
@@ -51,9 +53,13 @@ public class TrexsMod implements ModInitializer {
 				stacks.add(new ItemStack(ItemInit.NETHERITE_PARTISAN_ITEM));
 				stacks.add(new ItemStack(ItemInit.MAGIC_MISSILE_ITEM)); // INDUS
 				stacks.add(new ItemStack(ItemInit.MAGIC_BOLT_ITEM));
+				stacks.add(new ItemStack(ItemInit.ARCANE_BULLET_ITEM));
 				stacks.add(new ItemStack(ItemInit.RAW_INDUSIUM));
 				stacks.add(new ItemStack(ItemInit.INDUSIUM_INGOT));
 				stacks.add(new ItemStack(ItemInit.INDUSIUM_ORE));
+				stacks.add(new ItemStack(ItemInit.RAW_MITHRIL));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_INGOT));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_ORE));
 			}).build(); // builds
 
 }

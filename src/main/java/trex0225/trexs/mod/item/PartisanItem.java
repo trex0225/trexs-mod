@@ -26,6 +26,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import trex0225.trexs.mod.init.EffectsInit;
+import trex0225.trexs.mod.managers.StatManager;
+import trex0225.trexs.mod.util.StatHelper;
+import trex0225.trexs.mod.access.StatManagerAccess;
 
 public class PartisanItem extends Item implements Vanishable {
     private final Multimap<EntityAttribute, EntityAttributeModifier> attributeModifiers;
@@ -86,7 +89,13 @@ public class PartisanItem extends Item implements Vanishable {
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         float h = target.getHealth();
 
-        target.setHealth(h - ((this.getAttackDamage())));
+        PlayerEntity player = (PlayerEntity) attacker;
+        StatManager statManager = ((StatManagerAccess) player).getStatManager(player);
+        int damageBonus = statManager.getMelee();
+
+        StatHelper.dealBonusMelee(attacker, statManager, target);
+
+        //target.setHealth(h - ((this.getAttackDamage())));
 
         //float attackCooldown = 
 

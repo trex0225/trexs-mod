@@ -1,0 +1,22 @@
+{
+    "parent": "minecraft:item/handheld",
+    "textures": {
+        "layer0": "trexsmod:item/arcane_bullet"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.25
+            },
+            "model": "trexsmod:item/arcane_bullet_charge_0"
+        },
+        {
+            "predicate": {
+                "pulling": 1,
+                "pull": 0.5
+            },
+            "model": "trexsmod:item/arcane_bullet_charge_1"
+        }
+    ]
+}

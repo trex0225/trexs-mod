@@ -14,6 +14,7 @@ import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.OreFeatureConfig;
 import net.minecraft.world.gen.GenerationStep;
 import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
+import trex0225.trexs.mod.TrexsMod;
 
 public class ConfiguredFeatureInit {
     private static ConfiguredFeature<?, ?> ORE_INDUSIUM_OVERWORLD = Feature.ORE
@@ -26,10 +27,25 @@ public class ConfiguredFeatureInit {
     .spreadHorizontally()
     .repeat(20);
 
+    private static ConfiguredFeature<?, ?> ORE_MITHRIL_OVERWORLD = Feature.ORE
+    .configure(new OreFeatureConfig(
+      OreFeatureConfig.Rules.BASE_STONE_OVERWORLD,
+      BlockInit.MITHRIL_ORE.getDefaultState(),
+      8))
+    .range(new RangeDecoratorConfig(
+      UniformHeightProvider.create(YOffset.aboveBottom(0), YOffset.fixed(16))))
+    .spreadHorizontally()
+    .repeat(1);
+
     public static void init() {
-        RegistryKey<ConfiguredFeature<?, ?>> oreWoolOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
-      new Identifier("tutorial", "ore_wool_overworld"));
-        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreWoolOverworld.getValue(), ORE_INDUSIUM_OVERWORLD);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreWoolOverworld);
+        RegistryKey<ConfiguredFeature<?, ?>> oreIndusiumOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+      new Identifier(TrexsMod.MOD_ID, "ore_indusium_overworld"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreIndusiumOverworld.getValue(), ORE_INDUSIUM_OVERWORLD);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreIndusiumOverworld);
+
+        RegistryKey<ConfiguredFeature<?, ?>> oreMithrilOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
+      new Identifier(TrexsMod.MOD_ID, "ore_mithril_overworld"));
+        Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreMithrilOverworld.getValue(), ORE_MITHRIL_OVERWORLD);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreIndusiumOverworld);
     }
 }

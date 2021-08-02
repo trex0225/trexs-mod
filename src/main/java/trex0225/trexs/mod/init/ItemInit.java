@@ -11,7 +11,7 @@ import net.minecraft.item.ToolMaterials;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import trex0225.trexs.mod.TrexsMod;
-import trex0225.trexs.mod.item.MagicBoltItem;
+//import trex0225.trexs.mod.item.MagicBoltItem;
 import trex0225.trexs.mod.item.MagicMissileItem;
 import trex0225.trexs.mod.item.PartisanItem;
 import trex0225.trexs.mod.item.SpearItem;
@@ -63,23 +63,33 @@ public class ItemInit {
 
     public static final MagicMissileItem MAGIC_MISSILE_ITEM = register("magic_missile",
             new MagicMissileItem(ToolMaterials.WOOD, 60, 1.0F, -2.4F, 20, 
-            0, 4, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+            0, 4, 1, 5, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
 
-    public static final MagicBoltItem MAGIC_BOLT_ITEM = register("magic_bolt",
-            new MagicBoltItem(ToolMaterials.IRON, 250, 1.0F, -2.4F, 20, 
-            0, 4, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+    public static final MagicMissileItem MAGIC_BOLT_ITEM = register("magic_bolt",
+            new MagicMissileItem(ToolMaterials.IRON, 250, 1.0F, -2.4F, 20, 
+            0, 4, 2, 7, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+
+    public static final MagicMissileItem ARCANE_BULLET_ITEM = register("arcane_bullet",
+            new MagicMissileItem(ToolMaterials.DIAMOND, 1300, 1.0F, -2.4F, 20, 
+            0, 4, 3, 11, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
   
     // Raw Ore
 
     public static final Item RAW_INDUSIUM = register("raw_indusium", new Item((new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
 
+    public static final Item RAW_MITHRIL = register("raw_mithril", new Item((new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
+
     // Ingots
 
     public static final Item INDUSIUM_INGOT = register("indusium_ingot", new Item((new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
 
+    public static final Item MITHRIL_INGOT = register("mithril_ingot", new Item((new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
+
     // Ore
 
     public static final Item INDUSIUM_ORE = register("indusium_ore", new BlockItem(BlockInit.INDUSIUM_ORE, (new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
+
+    public static final Item MITHRIL_ORE = register("mithril_ore", new BlockItem(BlockInit.MITHRIL_ORE, (new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
 
     private static <I extends Item> I register(String name, I item) {
         ITEMS.put(new Identifier(TrexsMod.MOD_ID, name), item);

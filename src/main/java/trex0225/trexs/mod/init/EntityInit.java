@@ -10,7 +10,7 @@ import net.minecraft.entity.SpawnGroup;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 import trex0225.trexs.mod.TrexsMod;
-import trex0225.trexs.mod.entity.MagicBoltEntity;
+//import trex0225.trexs.mod.entity.MagicBoltEntity;
 import trex0225.trexs.mod.entity.MagicMissileEntity;
 import trex0225.trexs.mod.entity.SpearEntity;
 import trex0225.trexs.mod.item.SpearItem;
@@ -40,8 +40,8 @@ public class EntityInit {
     public static final EntityType<MagicMissileEntity> MAGIC_MISSILE_ENTITY = register("magic_missile",
         FabricEntityTypeBuilder.<MagicMissileEntity>create(SpawnGroup.MISC, MagicMissileEntity::new).dimensions(EntityDimensions.fixed(0.3F, 0.3F)).build());
 
-    public static final EntityType<MagicBoltEntity> MAGIC_BOLT_ENTITY = register("magic_bolt",
-        FabricEntityTypeBuilder.<MagicBoltEntity>create(SpawnGroup.MISC, MagicBoltEntity::new).dimensions(EntityDimensions.fixed(0.3F, 0.3F)).build());
+    // public static final EntityType<MagicBoltEntity> MAGIC_BOLT_ENTITY = register("magic_bolt",
+    //     FabricEntityTypeBuilder.<MagicBoltEntity>create(SpawnGroup.MISC, MagicBoltEntity::new).dimensions(EntityDimensions.fixed(0.3F, 0.3F)).build());
 
     public static void init() {
         for (Identifier id : ENTITY_TYPES.keySet()) {

@@ -15,6 +15,7 @@ public class ModelProviderInit {
         FabricModelPredicateProviderRegistry.register(ItemInit.MAGIC_MISSILE_ITEM, new Identifier("pulling"), (stack, world, entity, seed) -> {
             return entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
         });
+
         FabricModelPredicateProviderRegistry.register(ItemInit.MAGIC_BOLT_ITEM, new Identifier("pull"), (stack, world, entity, seed) -> {
             if (entity == null) {
                 return 0.0F;
@@ -23,6 +24,17 @@ public class ModelProviderInit {
             }
         });
         FabricModelPredicateProviderRegistry.register(ItemInit.MAGIC_BOLT_ITEM, new Identifier("pulling"), (stack, world, entity, seed) -> {
+            return entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
+        });
+
+        FabricModelPredicateProviderRegistry.register(ItemInit.ARCANE_BULLET_ITEM, new Identifier("pull"), (stack, world, entity, seed) -> {
+            if (entity == null) {
+                return 0.0F;
+            } else {
+                return entity.getActiveItem() != stack ? 0.0F : (float) (stack.getMaxUseTime() - entity.getItemUseTimeLeft()) / 50.0F;
+            }
+        });
+        FabricModelPredicateProviderRegistry.register(ItemInit.ARCANE_BULLET_ITEM, new Identifier("pulling"), (stack, world, entity, seed) -> {
             return entity != null && entity.isUsingItem() && entity.getActiveItem() == stack ? 1.0F : 0.0F;
         });
     }
