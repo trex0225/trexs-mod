@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " / ",
+        "@#@",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "trexsmod:magic_bolt"
+        },
+        "/": {
+            "item": "trexsmod:mithril_ingot"
+        },
+        "@": {
+            "item": "trexsmod:indusium_ingot"
+        }
+    },
+    "result": {
+        "item": "trexsmod:arcane_bullet",
+        "count": 1
+    }
+}

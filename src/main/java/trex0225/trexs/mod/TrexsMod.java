@@ -60,6 +60,14 @@ public class TrexsMod implements ModInitializer {
 				stacks.add(new ItemStack(ItemInit.RAW_MITHRIL));
 				stacks.add(new ItemStack(ItemInit.MITHRIL_INGOT));
 				stacks.add(new ItemStack(ItemInit.MITHRIL_ORE));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_HELMET));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_CHESTPLATE));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_LEGGINGS));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_BOOTS));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_PICKAXE));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_AXE));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_SHOVEL));
+				stacks.add(new ItemStack(ItemInit.MITHRIL_HOE));
 			}).build(); // builds
 
 }

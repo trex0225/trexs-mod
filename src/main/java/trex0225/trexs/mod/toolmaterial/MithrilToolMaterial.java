@@ -1,4 +1,4 @@
-package trex0225.trexs.mod.toolmaterials;
+package trex0225.trexs.mod.toolmaterial;
 
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.recipe.Ingredient;

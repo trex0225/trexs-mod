@@ -23,6 +23,16 @@
     "item.trexsmod.indusium_ingot": "Indusium Ingot",
     "item.trexsmod.mithril_ingot": "Mithril Ingot",
 
+    "item.trexsmod.mithril_helmet": "Mithril Hood",
+    "item.trexsmod.mithril_chestplate": "Mithril Cloak",
+    "item.trexsmod.mithril_leggings": "Mithril Stockings",
+    "item.trexsmod.mithril_boots": "Mithril Boots",
+
+    "item.trexsmod.mithril_pickaxe": "Mithril Pickaxe",
+    "item.trexsmod.mithril_axe": "Mithril Axe",
+    "item.trexsmod.mithril_hoe": "Mithril Hoe",
+    "item.trexsmod.mithril_shovel": "Mithril Shovel",
+
     "enchantment.trexsmod.hunt": "Hunt",
     "enchantment.trexsmod.wind_rider": "Wind Rider",
 

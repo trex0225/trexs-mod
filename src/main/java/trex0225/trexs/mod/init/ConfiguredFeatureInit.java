@@ -46,6 +46,6 @@ public class ConfiguredFeatureInit {
         RegistryKey<ConfiguredFeature<?, ?>> oreMithrilOverworld = RegistryKey.of(Registry.CONFIGURED_FEATURE_KEY,
       new Identifier(TrexsMod.MOD_ID, "ore_mithril_overworld"));
         Registry.register(BuiltinRegistries.CONFIGURED_FEATURE, oreMithrilOverworld.getValue(), ORE_MITHRIL_OVERWORLD);
-        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreIndusiumOverworld);
+        BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(), GenerationStep.Feature.UNDERGROUND_ORES, oreMithrilOverworld);
     }
 }

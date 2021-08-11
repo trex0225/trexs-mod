@@ -19,6 +19,7 @@ import net.minecraft.enchantment.EnchantmentHelper;
 public class StatHelper {
     public void UpdateStats(PlayerEntity player, StatManager statManager) {
         int totalMelee = 0;
+        int totalMagic = 0;
 
         String helmet = Registry.ITEM.getId(player.getEquippedStack(EquipmentSlot.HEAD).getItem()).getPath();
         String chestplate = Registry.ITEM.getId(player.getEquippedStack(EquipmentSlot.CHEST).getItem()).getPath();
@@ -42,7 +43,21 @@ public class StatHelper {
             totalMelee += 2;
         }
 
+
+        if (chestplate.equals("mithril_chestplate")) {
+            totalMagic += 1;
+        }
+        if (leggings.equals("mithril_leggings")) {
+            totalMagic += 1;
+        }
+
+        if (helmet.equals("mithril_helmet") && chestplate.equals("mithril_chestplate")
+                && leggings.equals("mithril_leggings") && boots.equals("mithril_boots")) {
+            totalMagic += 2;
+        }
+
         statManager.setMelee(totalMelee);
+        statManager.setMagic(totalMagic);
         // System.out.println(statManager.getMelee());
     }
 

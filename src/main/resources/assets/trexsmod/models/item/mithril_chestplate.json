@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "trexsmod:item/raw_mithril"
+        "layer0": "trexsmod:item/mithril_chestplate"
     }
 }

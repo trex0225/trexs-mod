@@ -4,9 +4,13 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.item.ToolItem;
 import net.minecraft.item.ToolMaterials;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
@@ -15,6 +19,9 @@ import trex0225.trexs.mod.TrexsMod;
 import trex0225.trexs.mod.item.MagicMissileItem;
 import trex0225.trexs.mod.item.PartisanItem;
 import trex0225.trexs.mod.item.SpearItem;
+import trex0225.trexs.mod.item.toolClassExtension.CustomAxeItem;
+import trex0225.trexs.mod.item.toolClassExtension.CustomHoeItem;
+import trex0225.trexs.mod.item.toolClassExtension.CustomPickaxeItem;
 
 public class ItemInit {
     private static final Map<Identifier, Item> ITEMS = new LinkedHashMap<>();
@@ -90,6 +97,28 @@ public class ItemInit {
     public static final Item INDUSIUM_ORE = register("indusium_ore", new BlockItem(BlockInit.INDUSIUM_ORE, (new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
 
     public static final Item MITHRIL_ORE = register("mithril_ore", new BlockItem(BlockInit.MITHRIL_ORE, (new Item.Settings()).group(TrexsMod.ITEM_GROUP)));
+
+    // Armor
+
+    public static final Item MITHRIL_HELMET = register("mithril_helmet", new ArmorItem(ArmorMaterialInit.MITHRIL, EquipmentSlot.HEAD, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+    public static final Item MITHRIL_CHESTPLATE = register("mithril_chestplate", new ArmorItem(ArmorMaterialInit.MITHRIL, EquipmentSlot.CHEST, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+    public static final Item MITHRIL_LEGGINGS = register("mithril_leggings", new ArmorItem(ArmorMaterialInit.MITHRIL, EquipmentSlot.LEGS, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+    public static final Item MITHRIL_BOOTS = register("mithril_boots", new ArmorItem(ArmorMaterialInit.MITHRIL, EquipmentSlot.FEET, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+
+    public static final Item SILVER_HELMET = register("silver_helmet", new ArmorItem(ArmorMaterialInit.SILVER, EquipmentSlot.HEAD, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+    public static final Item SILVER_CHESTPLATE = register("silver_chestplate", new ArmorItem(ArmorMaterialInit.SILVER, EquipmentSlot.CHEST, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+    public static final Item SILVER_LEGGINGS = register("silver_leggings", new ArmorItem(ArmorMaterialInit.SILVER, EquipmentSlot.LEGS, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+    public static final Item SILVER_BOOTS = register("silver_boots", new ArmorItem(ArmorMaterialInit.SILVER, EquipmentSlot.FEET, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+
+    // Tool
+
+    public static ToolItem MITHRIL_SHOVEL = register("mithril_shovel", new ShovelItem(ToolMaterialInit.MITHRIL, 1.5F, -3.0F, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+
+    public static ToolItem MITHRIL_PICKAXE = register("mithril_pickaxe", new CustomPickaxeItem(ToolMaterialInit.MITHRIL, 1, -2.8F, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+
+    public static ToolItem MITHRIL_AXE = register("mithril_axe", new CustomAxeItem(ToolMaterialInit.MITHRIL, 1.5F, -3.2F, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
+
+    public static ToolItem MITHRIL_HOE = register("mithril_hoe", new CustomHoeItem(ToolMaterialInit.MITHRIL, 7, -3.2F, new Item.Settings().group(TrexsMod.ITEM_GROUP)));
 
     private static <I extends Item> I register(String name, I item) {
         ITEMS.put(new Identifier(TrexsMod.MOD_ID, name), item);
